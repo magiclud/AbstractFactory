@@ -43,7 +43,7 @@ public class Report {
 	// this.setBody(new XMLReportBody());
 	// }
 	// }
-	public Report(ReportFactory report) {
+	public Report(ReportCreator report) {
 		// this.reportType = report;
 		this.setBody(report.createReportBody());
 		this.setFooter(report.createReportFooter());

@@ -1,20 +1,16 @@
 package eu.jpereira.trainings.designpatterns.creational.abstractfactory.json;
 
 import eu.jpereira.trainings.designpatterns.creational.abstractfactory.ReportBody;
-import eu.jpereira.trainings.designpatterns.creational.abstractfactory.ReportFactory;
+import eu.jpereira.trainings.designpatterns.creational.abstractfactory.ReportCreator;
 import eu.jpereira.trainings.designpatterns.creational.abstractfactory.ReportFooter;
 import eu.jpereira.trainings.designpatterns.creational.abstractfactory.ReportHeader;
 
-public class JSONReportFactory implements ReportFactory {
-
-	ReportFooter footer = null;
-	ReportHeader header = null;
-	ReportBody body = null;
+public class JSONReportFactory implements ReportCreator {
 
 	@Override
 	public ReportBody createReportBody() {
 
-		body = new JSONReportBody();
+		ReportBody body = new JSONReportBody();
 		body.getType();
 		return body;
 
@@ -23,14 +19,14 @@ public class JSONReportFactory implements ReportFactory {
 
 	@Override
 	public ReportFooter createReportFooter() {
-		footer = new JSONReportFooter();
+		ReportFooter footer = new JSONReportFooter();
 		footer.getType();
 		return footer;
 	}
 
 	@Override
 	public ReportHeader createReportHeader() {
-		header = new JSONReportHeader();
+		ReportHeader header = new JSONReportHeader();
 		header.getType();
 		return header;
 	}
